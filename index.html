@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalStay Palace Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D28D9',
+                        secondary: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i data-feather="home" class="text-primary h-6 w-6 mr-2"></i>
+                    <span class="text-xl font-bold text-primary">RoyalStay</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-primary font-medium">Dashboard</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">Rooms</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">Bookings</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">Guests</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">Staff</a>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition">
+                        <i data-feather="user" class="inline mr-2"></i> Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-primary to-secondary h-96">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative max-w-6xl mx-auto h-full flex items-center px-4">
+            <div class="text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Luxury Hotel Management</h1>
+                <p class="text-xl mb-8">Efficiently manage your hotel operations with our comprehensive system</p>
+                <button class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">
+                    Explore Features <i data-feather="arrow-right" class="inline ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="flex items-center">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                        <i data-feather="calendar" class="text-primary h-6 w-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-gray-500 text-sm">Today's Bookings</h3>
+                        <p class="text-2xl font-bold">24</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="flex items-center">
+                    <div class="bg-secondary bg-opacity-10 p-3 rounded-full mr-4">
+                        <i data-feather="home" class="text-secondary h-6 w-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-gray-500 text-sm">Available Rooms</h3>
+                        <p class="text-2xl font-bold">12/56</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="flex items-center">
+                    <div class="bg-yellow-500 bg-opacity-10 p-3 rounded-full mr-4">
+                        <i data-feather="users" class="text-yellow-500 h-6 w-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-gray-500 text-sm">Current Guests</h3>
+                        <p class="text-2xl font-bold">42</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rooms Section -->
+    <div class="bg-gray-100 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">Room Management</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Room Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                    <img src="http://static.photos/hotel/640x360/1" alt="Deluxe Room" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Deluxe Room</h3>
+                        <p class="text-gray-600 mb-4">Spacious room with king bed and city view</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$199/night</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Available</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                    <img src="http://static.photos/hotel/640x360/2" alt="Executive Suite" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Executive Suite</h3>
+                        <p class="text-gray-600 mb-4">Luxurious suite with separate living area</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$349/night</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Booked</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                    <img src="http://static.photos/hotel/640x360/3" alt="Presidential Suite" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Presidential Suite</h3>
+                        <p class="text-gray-600 mb-4">Ultimate luxury with panoramic city views</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$599/night</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">
+                    View All Rooms <i data-feather="chevron-right" class="inline ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">RoyalStay</h3>
+                    <p class="text-gray-400">Premium hotel management system for modern hospitality businesses.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Dashboard</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Rooms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Bookings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Reports</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy;  RoyalStay Palace Manager. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
