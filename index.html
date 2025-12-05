@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +20,11 @@
             }
         }
     </script>
+    
 </head>
+
 <body class="bg-gray-50">
+
     <!-- Navigation -->
     <nav class="bg-white shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
@@ -36,14 +40,40 @@
                     <a href="#" class="text-gray-600 hover:text-primary">Guests</a>
                     <a href="#" class="text-gray-600 hover:text-primary">Staff</a>
                 </div>
+
+                <!-- Login Button -->
                 <div class="flex items-center">
-                    <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition">
+                    <button id="loginBtn"
+                        class="bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition">
                         <i data-feather="user" class="inline mr-2"></i> Login
                     </button>
+                    <!-- Login Modal -->
+<div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white p-6 rounded shadow-lg w-80">
+    <h2 class="text-xl font-bold mb-4 text-center">Login</h2>
+
+    <input type="text" id="username" placeholder="Username" class="w-full border p-2 rounded mb-3">
+    <input type="password" id="password" placeholder="Password" class="w-full border p-2 rounded mb-3">
+
+    <p id="msg" class="text-red-500 text-sm mb-2 hidden">Invalid Login! Try again.</p>
+
+    <button id="submitLogin" class="bg-primary text-white px-4 py-2 rounded w-full">Login</button>
+    <button id="closeModal" class="mt-2 w-full py-2 text-gray-600">Cancel</button>
+  </div>
+</div>
+
                 </div>
             </div>
         </div>
     </nav>
+
+
+    <!-- ⭐ Login Form (Hidden Initially) -->
+    <div id="loginForm" style="display:none; margin-top:20px;">
+        <div class="visme_d" data-title="Webinar Registration form" data-url="g7ddqxx0-untitled-oriject?fullpage=true"
+            data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="133190">
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <div class="relative bg-gradient-to-r from-primary to-secondary h-96">
@@ -117,7 +147,8 @@
                 </div>
                 <!-- Room Card 2 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="http://static.photos/hotel/640x360/2" alt="Executive Suite" class="w-full h-48 object-cover">
+                    <img src="http://static.photos/hotel/640x360/2" alt="Executive Suite"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Executive Suite</h3>
                         <p class="text-gray-600 mb-4">Luxurious suite with separate living area</p>
@@ -129,7 +160,8 @@
                 </div>
                 <!-- Room Card 3 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="http://static.photos/hotel/640x360/3" alt="Presidential Suite" class="w-full h-48 object-cover">
+                    <img src="http://static.photos/hotel/640x360/3" alt="Presidential Suite"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Presidential Suite</h3>
                         <p class="text-gray-600 mb-4">Ultimate luxury with panoramic city views</p>
@@ -176,21 +208,57 @@
                 <div>
                     <h4 class="font-bold mb-4">Connect</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i
+                                data-feather="facebook"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i
+                                data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i
+                                data-feather="linkedin"></i></a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy;  RoyalStay Palace Manager. All rights reserved.</p>
+                <p>&copy; RoyalStay Palace Manager. All rights reserved.</p>
             </div>
         </div>
     </footer>
+<script>
+feather.replace(); // initialize icons
 
-    <script>
-        feather.replace();
-    </script>
+// Open modal
+document.getElementById("loginBtn").addEventListener("click", function () {
+    document.getElementById("loginModal").classList.remove("hidden");
+});
+
+// Close modal
+document.getElementById("closeModal").addEventListener("click", function () {
+    document.getElementById("loginModal").classList.add("hidden");
+});
+
+// Login validation
+document.getElementById("submitLogin").addEventListener("click", function () {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const message = document.getElementById("msg");
+
+    // Example login credentials (you can change)
+    const realUser = "admin";
+    const realPass = "12345";
+
+    if (user === realUser && pass === realPass) {
+        alert("Login Successful 🎉");
+        message.classList.add("hidden");
+        document.getElementById("loginModal").classList.add("hidden");
+
+        // Example redirect after login
+        // window.location.href = "dashboard.html";
+    } else {
+        message.classList.remove("hidden");
+    }
+});
+</script>
+
 </body>
+
 </html>
